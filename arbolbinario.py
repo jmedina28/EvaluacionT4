@@ -21,3 +21,14 @@ def insertar(raiz, dato, nrr=None):
         else:
             raiz.izq = insertar(raiz.izq, dato, nrr)
     return raiz
+
+def barridopostorden(raiz):
+    cola = Cola()
+    arribo(cola, raiz)
+    while(not vacia(cola)):
+        nodo = atencion(cola)
+        print(nodo.info)
+        if(nodo.izq is not None):
+            arribo(cola, nodo.izq)
+        if(nodo.der is not None):
+            arribo(cola, nodo.der)
