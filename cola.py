@@ -20,3 +20,13 @@ def atencion(cola):
         cola.ultimo = None
     cola.nelementos -= 1
     return aux
+
+def arribo(cola, dato):
+    nodo = nodoCola()
+    nodo.info = dato
+    if(cola.ultimo is None):
+        cola.primero = nodo
+    else:
+        cola.ultimo.sig = nodo
+    cola.ultimo = nodo
+    cola.nelementos += 1
