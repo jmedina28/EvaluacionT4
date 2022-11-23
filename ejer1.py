@@ -1,4 +1,4 @@
-from arbolbinario import insertar, barridopostorden, nodoHuffman
+from arbolbinario import nodoHuffman
 from sys import getsizeof
 
 dic = {'A': '00', '3': '01', '1': '100', 'T': '110',
@@ -24,9 +24,6 @@ bosque = []
 for i in tabla:
     nodo = nodoHuffman(i[0], i[1])
     bosque.append(nodo)
-
-for i in bosque:
-    print(i.info, i.valor)
 
 while(len(bosque) > 1):
     elemento1 = bosque.pop(0)
