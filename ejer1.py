@@ -12,3 +12,9 @@ tabla.sort(key=comparo)
 
 def comparacionnodo(elemento):
     return elemento.valor
+
+bosque = []
+
+for i in tabla:
+    nodo = nodoHuffman(i[0], i[1])
+    bosque.append(nodo)
