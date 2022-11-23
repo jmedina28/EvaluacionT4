@@ -68,8 +68,7 @@ def codificar(cadena, dic):
 if __name__ == "__main__":
     cadena = "TF103A0M"
     codificada = codificar(cadena, dic)
-    print(codificada)
-    print(getsizeof(codificada), getsizeof(b"1101111001010010010101011"))
-    print('La cadena decodificada es la siguiente:')
+    print('La cadena codificada es la siguiente:' + str(codificada))
+    getsizeof(codificada), getsizeof(b"1101111001010010010101011")
     decodificada = decodificar(codificada, bosque[0])
-    print(decodificada)
+    print('La cadena decodificada es la siguiente:' + str(decodificada))
