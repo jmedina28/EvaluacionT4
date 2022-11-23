@@ -1,4 +1,5 @@
 from arbolbinario import insertar, barridopostorden, nodoHuffman
+from sys import getsizeof
 
 dic = {'A': '00', '3': '01', '1': '100', 'T': '110', 
     'F': '111','0': '1010', 'M': '1011'}
