@@ -21,3 +21,11 @@ for i in tabla:
 
 for i in bosque:
     print(i.info, i.valor)
+
+while(len(bosque) > 1):
+    elemento1 = bosque.pop(0)
+    elemento2 = bosque.pop(0)
+    nodo = nodoHuffman('', elemento1.valor+elemento2.valor)
+    nodo.izq, nodo.der = elemento1, elemento2
+    bosque.append(nodo)
+    bosque.sort(key=comparacionnodo)
