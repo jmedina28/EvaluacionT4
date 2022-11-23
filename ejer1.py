@@ -18,3 +18,6 @@ bosque = []
 for i in tabla:
     nodo = nodoHuffman(i[0], i[1])
     bosque.append(nodo)
+
+for i in bosque:
+    print(i.info, i.valor)
