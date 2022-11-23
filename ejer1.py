@@ -42,3 +42,24 @@ def gtabla(raiz, cadena=''):
             gtabla(raiz.der, cadena)
 
 gtabla(bosque[0])
+
+def decodificar(cadena, arbol_huffman):
+    decodificada, pos = '', 0
+    raiz_aux = arbol_huffman
+    while(pos < len(cadena)):
+        if(cadena[pos] == '0'):
+            raiz_aux = raiz_aux.izq
+        else:
+            raiz_aux = raiz_aux.der
+        pos += 1
+        if(raiz_aux.izq is None):
+            decodificada += raiz_aux.info
+            raiz_aux = arbol_huffman
+        decodificada
+    return decodificada
+
+def codificar(cadena, dic):
+    codificada = ''
+    for caracter in cadena:
+        codificada += dic[caracter]
+    return codificada
