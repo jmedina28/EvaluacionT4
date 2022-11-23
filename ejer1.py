@@ -9,3 +9,6 @@ def comparo(elemento):
     return elemento[1]
 
 tabla.sort(key=comparo)
+
+def comparacionnodo(elemento):
+    return elemento.valor
