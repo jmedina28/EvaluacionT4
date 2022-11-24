@@ -20,7 +20,7 @@ nombre = ['Bulbasaur', 'Charmander', 'Pikachu', 'Ivysaur', 'Charmeleon', 'Raichu
 'Venusaur', 'Charizard', 'Mewtwo', 'Squirtle', 'Wartortle', 'Blastoise', 'Mew', 'Eevee', 'Jolteon', 'Tyrantum', 'Lycanroc']
 
 for i in range (0, len(nombre)):
-    pokemon = Pokemon(nombre[i], randint(1, 100), choice(tipo), choice(debilidad))
-    arbol_numero = insertar(arbol_numero, [pokemon, pokemon.numero])
-    arbol_nombres = insertar(arbol_nombres, [pokemon, pokemon.nombre])
-    arbol_tipo = insertar(arbol_tipo, [pokemon, pokemon.tipo])
+    poke = Pokemon(nombre[i], randint(1, 100), choice(tipo), choice(debilidad))
+    arbol_numero = insertar(arbol_numero, [poke, poke.numero])
+    arbol_nombres = insertar(arbol_nombres, [poke, poke.nombre])
+    arbol_tipo = insertar(arbol_tipo, [poke, poke.tipo])
