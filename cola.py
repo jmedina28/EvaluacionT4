@@ -1,6 +1,6 @@
 class nodoCola():
     def __init__(self):
-        self.dato = None
+        self.informacion = None
         self.siguiente = None
 
 class Cola():
@@ -14,8 +14,8 @@ def vacia(cola):
     return cola.nelementos == None
 
 def atencion(cola):
-    aux = cola.primero.info
-    cola.primero = cola.primero.sig
+    aux = cola.primero.informacion
+    cola.primero = cola.primero.siguiente
     if(cola.primero is None):
         cola.ultimo = None
     cola.nelementos -= 1
@@ -23,10 +23,10 @@ def atencion(cola):
 
 def arribo(cola, dato):
     nodo = nodoCola()
-    nodo.info = dato
+    nodo.informacion = dato
     if(cola.ultimo is None):
         cola.primero = nodo
     else:
-        cola.ultimo.sig = nodo
+        cola.ultimo.siguiente = nodo
     cola.ultimo = nodo
     cola.nelementos += 1

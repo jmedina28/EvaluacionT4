@@ -37,7 +37,7 @@ while(len(bosque) > 1):
 def gtabla(raiz, cadena=''):
     if(raiz is not None):
         if(raiz.izq is None):
-            print(raiz.info, cadena)
+            print(raiz.informacion, cadena)
         else:
             cadena += '0'
             gtabla(raiz.izq, cadena)
@@ -59,7 +59,7 @@ def decodificar(cadena, arbol_huffman):
             raiz_aux = raiz_aux.der
         pos += 1
         if(raiz_aux.izq is None):
-            decodificada += raiz_aux.info
+            decodificada += raiz_aux.informacion
             raiz_aux = arbol_huffman
         decodificada
     return decodificada
