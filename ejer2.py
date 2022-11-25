@@ -47,3 +47,14 @@ def busqueda_prox_poke(raiz, busqueda):
 x = input('Introduzca el nombre parcial que desea buscar:')
 print('El listado de los pokemons con ese nombre parcial es el siguiente:')
 busqueda_prox_poke(a_nombres, x.lower())
+
+def busqueda_prox_pokemon2(raiz, busqueda):
+    if(raiz is not None):
+        if(raiz.informacion[1][0:len(busqueda)] == busqueda):
+            print(raiz.informacion[0].nombre)
+        busqueda_prox_pokemon2(raiz.izq, busqueda)
+        busqueda_prox_pokemon2(raiz.der, busqueda)
+
+x = input('Introduzca el tipo de pokemon que desea buscar:')
+print('Todos los pokemons de tipo', x, 'son los siguientes:')
+busqueda_prox_pokemon2(a_tipo, x.lower())
