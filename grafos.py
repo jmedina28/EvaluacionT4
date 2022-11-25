@@ -15,3 +15,9 @@ class nodoArista():
 
 class nodoVertice():
     informacion, siguiente, visitado, adyacentes, datos = None, None, False, None, None
+
+class Arista():
+    
+    def __init__(self):
+        self.__inicio = None
+        self.__tamanio = 0
