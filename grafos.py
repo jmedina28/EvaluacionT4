@@ -283,7 +283,7 @@ class Grafo():
                 adyacentes = adyacentes.siguiente
             aux = aux.siguiente
 
-        while len(bosque) > 1 and aristas.tamanio > 0:
+        while len(bosque) > 1 and aristas.nelementos > 0:
             arista, peso = aristas.quitar()
             origen = buscar_en_bosque(bosque, arista[0])
             destino = buscar_en_bosque(bosque, arista[1])
@@ -315,7 +315,7 @@ class Grafo():
                 no_visitado.agregar([aux, None], inf)
             aux = aux.siguiente
 
-        while no_visitado.tamanio > 0:
+        while no_visitado.nelementos > 0:
             elemento, peso = no_visitado.quitar()
             vertice, previo = elemento[0], elemento[1]
             camino[vertice.informacion] = {'previo': previo, 'peso': peso}
