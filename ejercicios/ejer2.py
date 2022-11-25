@@ -1,6 +1,6 @@
 from random import randint, choice
-from cola import Cola, vacia, atencion, arribo
-from arbolbinario import nodoArbol, insertar
+from tda.cola import Cola, vacia, atencion, arribo
+from tda.arbolbinario import nodoArbol, insertar
 
 a_nombres = None
 a_tipo = None
