@@ -1,4 +1,4 @@
-from tda.arbolbinario import nodoHuffman
+from arbolbinario import nodoHuffman
 from sys import getsizeof
 
 

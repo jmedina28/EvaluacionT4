@@ -1,4 +1,4 @@
-from tda.cola import Cola, vacia, atencion, arribo
+from cola import Cola, vacia, atencion, arribo
 
 class nodoArbol(object):
     # nrr significa numero de registro relativo
