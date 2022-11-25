@@ -10,7 +10,7 @@ a_numero = None
 def cargar_datos():
     global nombre
     nombre = []
-    with open('pokemon.csv', 'r') as archivo:
+    with open('ejercicios/pokemon.csv', 'r') as archivo:
         lector = csv.reader(archivo)
         for fila in lector:
             nombre.append(fila[1].lower())
