@@ -11,14 +11,17 @@ def criterio(dato, campo=None):
         return dic[campo]
 
 class nodoArista():
+    
     informacion, siguiente, peso = None, None, None
 
 class nodoVertice():
+    
     informacion, siguiente, visitado, adyacentes, datos = None, None, False, None, None
 
 class Arista():
     
     def __init__(self):
+        
         self.__inicio = None
         self.__tamanio = 0
 
@@ -26,6 +29,7 @@ class Arista():
         return self.__inicio
 
     def insertar_arista(self, dato, peso, campo=None):
+        
         nodo = nodoArista()
         nodo.informacion = dato
         nodo.peso = peso
@@ -48,12 +52,14 @@ class Arista():
         return self.__tamanio
 
     def bar_aristas(self):
+        
         aux = self.__inicio
         while(aux is not None):
             print(aux.informacion, aux.peso)
             aux = aux.siguiente
     
     def busqueda_arista(self, buscado, campo=None):
+        
         pos = None
         aux = self.__inicio
         while(aux is not None and pos is None):
@@ -64,6 +70,7 @@ class Arista():
         return pos
 
     def eliminar_arista(self, clave, campo=None):
+        
         dato, peso = None, None
         if self.__inicio is not None:
             if(criterio(self.__inicio.informacion, campo) == clave):
@@ -87,6 +94,7 @@ class Arista():
         return dato, peso 
 
     def obtener_elemento_arista(self, indice):
+        
         if(indice <= self.__tamanio-1 and indice >= 0):
             aux = self.__inicio
             for i in range(indice):
@@ -98,12 +106,14 @@ class Arista():
 class Grafo():
 
     def __init__(self, dirigido=True):
+        
         self.__inicio = None
         self.__tamanio = 0
         self.__dirigido = dirigido
 
 
     def insertar_vertice(self, dato, campo=None, datos=None):
+        
         nodo = nodoVertice()
         nodo.informacion = dato
         nodo.datos = datos
@@ -125,6 +135,7 @@ class Grafo():
         self.__tamanio += 1
 
     def insertar_arista(self, origen, destino, peso):
+        
         vert_origen = self.busqueda_vertice(origen)
         vert_destino = self.busqueda_vertice(destino)
         if(vert_origen and vert_destino):
@@ -136,18 +147,21 @@ class Grafo():
         return self.__tamanio
 
     def bar_vertice(self):
+        
         aux = self.__inicio
         while(aux is not None):
             print(aux.informacion)
             aux = aux.siguiente
     
     def marcar_no_visitado(self):
+        
         aux = self.__inicio
         while(aux is not None):
             aux.visitado = False
             aux = aux.siguiente
 
     def busqueda_vertice(self, buscado, campo=None):
+        
         pos = None
         aux = self.__inicio
         while(aux is not None and pos is None):
@@ -158,6 +172,7 @@ class Grafo():
         return pos
 
     def bar_no_visitado(self):
+        
         aux = self.__inicio
         while(aux is not None):
             if not aux.visitado:
@@ -165,6 +180,7 @@ class Grafo():
             aux = aux.siguiente
 
     def eliminar_vertice(self, clave, campo=None):
+        
         dato = None
         if self.__inicio is not None:
             if(criterio(self.__inicio.informacion, campo) == clave):
@@ -191,6 +207,7 @@ class Grafo():
         return dato
 
     def eliminar_arista(self, origen, destino):
+        
         vert_origen = self.busqueda_vertice(origen)
         valor, peso = None, None
         if vert_origen:
@@ -202,6 +219,7 @@ class Grafo():
         return peso
 
     def obtener_elemento_vertice(self, indice):
+        
         if(indice <= self.__tamanio-1 and indice >= 0):
             aux = self.__inicio
             for i in range(indice):
@@ -211,6 +229,7 @@ class Grafo():
             return None
     
     def es_adyacente(self, origen, destino):
+        
         resultado = False
         vert_origen = self.busqueda_vertice(origen)
         if vert_origen:
@@ -220,11 +239,13 @@ class Grafo():
         return resultado
 
     def adyacentes(self, origen):
+        
         vert_origen = self.busqueda_vertice(origen)
         if vert_origen:
             vert_origen.adyacentes.bar_aristas()
 
     def existe_paso(self, origen, destino):
+        
         resultado = False
         vert_origen = self.busqueda_vertice(origen)
         if not vert_origen.visitado:
@@ -240,6 +261,7 @@ class Grafo():
         return resultado
 
     def bar_profundidad(self, origen):
+        
         vert_origen = self.busqueda_vertice(origen)
         if not vert_origen.visitado:
             print(vert_origen.informacion)
@@ -250,6 +272,7 @@ class Grafo():
                 adyacentes = adyacentes.siguiente
     
     def bar_amplitud(self, origen):
+        
         self.marcar_no_visitado()
         vert_origen = self.busqueda_vertice(origen)
         pendientes = Cola()
@@ -268,6 +291,7 @@ class Grafo():
                     adyacentes = adyacentes.siguiente
 
     def kruskal(self):
+        
         def buscar_en_bosque(bosque, buscado):
             for arbol in bosque:
                 if buscado in arbol:
@@ -302,8 +326,9 @@ class Grafo():
 
         return bosque
 
-    def dijkstra(self, origen):
+    def dijkstra(self, origen): 
         from math import inf
+        
         no_visitado = MonticuloMinimo()
         camino = {}
 
@@ -360,6 +385,7 @@ class Grafo():
         return paises
     
     def doble_maravilla(self):
+        
         maravillas = {}
         for vertice in self.vertices:
             if self.vertices[vertice]['datos']['tipo'] == 'natural':

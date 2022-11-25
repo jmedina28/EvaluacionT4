@@ -25,7 +25,7 @@ grafo.insertar_vertice('R', datos={'pais': 'Estonia','tipo': 'arquitectonica'})
 grafo.insertar_vertice('K', datos={'pais': 'Egipto','tipo': 'arquitectonica'})
 
 grafo.insertar_arista('W', 'L', 6)
-grafo.insertar_arista('W', 'Z', 6)
+grafo.insertar_arista('W', 'Z', 5)
 grafo.insertar_arista('Z', 'L', 7)
 grafo.insertar_arista('L', 'X', 4)
 grafo.insertar_arista('L', 'K', 4)

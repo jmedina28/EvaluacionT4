@@ -29,7 +29,8 @@ class Pokemon():
 
 
 tipo = ['agua', 'fuego', 'tierra', 'electrico']
-debilidades = ['agua', 'fuego', 'tierra', 'electrico', 'Jolteon','Tyrantum', 'Lycanroc']
+debilidades = ['agua', 'fuego', 'tierra', 'electrico', 'Jolteon', 'Lycanroc', 'Tyrantum', 'Garchomp', 
+'Gardevoir', 'Gengar', 'Mewtwo', 'Machamp', 'Golem', 'Alakazam', 'Butterfree', 'Nidoran', 'Klinklang']
 
 for i in range (0, len(nombre)):
     poke = Pokemon(nombre[i].lower(), randint(1, 100), choice(tipo), choice(debilidades))

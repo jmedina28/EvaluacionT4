@@ -14,6 +14,7 @@ def vacia(cola):
     return cola.nelementos == 0
 
 def atencion(cola):
+    
     aux = cola.primero.informacion
     cola.primero = cola.primero.siguiente
     if(cola.primero is None):
@@ -22,6 +23,7 @@ def atencion(cola):
     return aux
 
 def arribo(cola, dato):
+    
     nodo = nodoCola()
     nodo.informacion = dato
     if(cola.ultimo is None):
