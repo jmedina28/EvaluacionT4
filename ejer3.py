@@ -30,4 +30,4 @@ for nodo in a_min:
     peso_total += int(nodo[2])
     print(f'{nodo[0]}-{nodo[1]}-{nodo[2]}')
 
-print(f"El peso total es {peso_total}")
+print(f"El peso total es: {peso_total}")
