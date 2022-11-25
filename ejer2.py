@@ -55,6 +55,39 @@ def busqueda_prox_pokemon2(raiz, busqueda):
         busqueda_prox_pokemon2(raiz.izq, busqueda)
         busqueda_prox_pokemon2(raiz.der, busqueda)
 
-x = input('Introduzca el tipo de pokemon que desea buscar:')
-print('Todos los pokemons de tipo', x, 'son los siguientes:')
+x = input('Introduzca el tipo de Pokemon que desea buscar:')
+print('Todos los Pokemons de tipo', x, 'son los siguientes:')
 busqueda_prox_pokemon2(a_tipo, x.lower())
+
+def orden_numero2(raiz):
+    if(raiz is not None):
+        orden_numero2(raiz.izq)
+        print(raiz.informacion[0])
+        orden_numero2(raiz.der)
+
+print('Lista en orden creciente en función del número asignado a cada Pokemon:')
+orden_numero2(a_numero)
+print()
+
+def orden_nombre(raiz):
+    if(raiz is not None):
+        orden_nombre(raiz.izq)
+        print(raiz.informacion[0])
+        orden_nombre(raiz.der)
+
+print('Lista ordenada de forma creciente a nivel alfabético de los Pokemons:')
+orden_nombre(a_nombres)
+
+def nivel_nombre(raiz):
+    cola = Cola()
+    arribo(cola, raiz)
+    while(not vacia(cola)):
+        nodo = atencion(cola)
+        print(nodo.informacion[0])
+        if(nodo.izq is not None):
+            arribo(cola, nodo.izq)
+        if(nodo.der is not None):
+            arribo(cola, nodo.der)
+    
+print('Lista en orden por nivel de los Pokemons:')
+nivel_nombre(a_nombres)
