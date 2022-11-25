@@ -47,7 +47,7 @@ class Arista():
     def tamanio(self):
         return self.__tamanio
 
-    def barrido_aristas(self):
+    def bar_aristas(self):
         aux = self.__inicio
         while(aux is not None):
             print(aux.informacion, aux.peso)
@@ -310,9 +310,9 @@ class Grafo():
         aux = self.__inicio
         while aux is not None:
             if aux.informacion == origen:
-                no_visitado.agregar([aux, None], 0)
+                no_visitado.aniadir([aux, None], 0)
             else:
-                no_visitado.agregar([aux, None], inf)
+                no_visitado.aniadir([aux, None], inf)
             aux = aux.siguiente
 
         while no_visitado.nelementos > 0:
@@ -358,3 +358,16 @@ class Grafo():
             aux = aux.siguiente
 
         return paises
+    
+    def doble_maravilla(self):
+        maravillas = {}
+        for vertice in self.vertices:
+            if self.vertices[vertice]['datos']['tipo'] == 'natural':
+                maravillas[vertice] = self.vertices[vertice]['datos']['pais']
+        for vertice in self.vertices:
+            if self.vertices[vertice]['datos']['tipo'] == 'arquitectonica':
+                if self.vertices[vertice]['datos']['pais'] in maravillas.values():
+                    for pais in maravillas:
+                        if self.vertices[vertice]['datos']['pais'] == maravillas[pais]:
+                            print(f"El pais {self.vertices[vertice]['datos']['pais']} tiene maravillas naturales y arquitectonicas")
+                            break

@@ -35,3 +35,5 @@ def lanzar():
         print('La cadena decodificada es la siguiente:' + str(decodificada))
     elif(x == 2):
         import ejer2 
+    elif(x == 3):
+        import ejer3

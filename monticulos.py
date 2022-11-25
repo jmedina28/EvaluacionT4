@@ -12,6 +12,12 @@ class MonticuloMinimo():
     def monticulo_lleno(self):
         return self.nelementos == len(self.vector)
 
+    def buscar(self, busqueda):
+        for index, value in enumerate(self.vector):
+            if value[0][0].informacion == busqueda:
+                resultado = index
+                return  resultado
+
     def aniadir(self, dato, prioridad=3):
         self.vector.append([dato, prioridad])
         self.flotar(self.nelementos)

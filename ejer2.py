@@ -115,17 +115,17 @@ busqueda_prox_pokemon3(a_nombres, 'Lycanroc')
 print('Debiles contra Tyrantrum: ')
 busqueda_prox_pokemon3(a_nombres, 'Tyrantrum')
 
-cont = 0
+contador = 0
 
-def orden_tipo(raiz, cont):
+def orden_tipo(raiz, contador):
     if(raiz is not None):
         if raiz.informacion[0].tipo == 'fuego':
-            cont += 1
-        orden_tipo(raiz.izq, cont)
+            contador += 1
+        orden_tipo(raiz.izq, contador)
         print(raiz.informacion[0].nombre, raiz.informacion[0].tipo)
-        orden_tipo(raiz.der, cont)
-    return cont
+        orden_tipo(raiz.der, contador)
+    return contador
 
 print('Pokemons y su tipo:')
-cont = orden_tipo(a_nombres, cont)
-print('Cantidad de Pokemons del tipo fuego:',cont)
+contador = orden_tipo(a_nombres, contador)
+print('Cantidad de Pokemons del tipo fuego:',contador)
