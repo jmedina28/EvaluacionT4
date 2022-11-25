@@ -1,11 +1,21 @@
 from random import randint, choice
 from cola import Cola, vacia, atencion, arribo
 from arbolbinario import nodoArbol, insertar
+import csv
 
 a_nombres = None
 a_tipo = None
 a_numero = None
 
+def cargar_datos():
+    global nombre
+    nombre = []
+    with open('pokemon.csv', 'r') as archivo:
+        lector = csv.reader(archivo)
+        for fila in lector:
+            nombre.append(fila[1].lower())
+
+cargar_datos()
 class Pokemon():
     
     def __init__(self, nombre, numero, tipo, debilidad):
@@ -20,8 +30,6 @@ class Pokemon():
 
 tipo = ['agua', 'fuego', 'tierra', 'electrico']
 debilidades = ['agua', 'fuego', 'tierra', 'electrico', 'Jolteon','Tyrantum', 'Lycanroc']
-nombre = ['Bulbasaur', 'Charmander', 'Pikachu', 'Ivysaur', 'Charmeleon', 'Raichu', 'Venusaur', 
-'Charizard', 'Mewtwo', 'Squirtle', 'Wartortle', 'Blastoise', 'Mew', 'Eevee', 'Jolteon', 'Tyrantum', 'Lycanroc']
 
 for i in range (0, len(nombre)):
     poke = Pokemon(nombre[i].lower(), randint(1, 100), choice(tipo), choice(debilidades))
