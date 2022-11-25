@@ -301,3 +301,31 @@ class Grafo():
                         bosque.append(origen+'-'+destino+f'-{arista[0]};{arista[1]};{peso}')
 
         return bosque
+
+    def dijkstra(self, origen):
+        from math import inf
+        no_visitado = MonticuloMinimo()
+        camino = {}
+
+        aux = self.__inicio
+        while aux is not None:
+            if aux.informacion == origen:
+                no_visitado.agregar([aux, None], 0)
+            else:
+                no_visitado.agregar([aux, None], inf)
+            aux = aux.siguiente
+
+        while no_visitado.tamanio > 0:
+            elemento, peso = no_visitado.quitar()
+            vertice, previo = elemento[0], elemento[1]
+            camino[vertice.informacion] = {'previo': previo, 'peso': peso}
+            adyacentes = vertice.adyacentes.get_inicio()
+            while adyacentes is not None:
+                buscado = no_visitado.buscar(adyacentes.informacion)
+                if buscado:
+                    if no_visitado.vector[buscado][1] > peso + adyacentes.peso:
+                        no_visitado.vector[buscado][1] = peso + adyacentes.peso
+                        no_visitado.vector[buscado][0][1] = vertice.informacion
+                        no_visitado.flotar(buscado)
+                adyacentes = adyacentes.siguiente
+        return camino
