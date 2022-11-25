@@ -342,3 +342,19 @@ class Grafo():
                 vert_destino = resultados[vert_destino['previo']]
             camino_mas_corto['camino'].reverse()
         return camino_mas_corto
+
+    def contar_maravillas(self):
+        paises = {}
+        aux = self.__inicio
+        while aux is not None:
+            if aux.datos['pais'] not in paises:
+                print('-')
+                paises[aux.datos['pais']] = {'arquitectonica': False, 'natural': False}
+
+            if aux.datos['tipo'] == 'natural':
+                paises[aux.datos['pais']]['natural'] = True
+            else:
+                paises[aux.datos['pais']]['arquitectonica'] = True
+            aux = aux.siguiente
+
+        return paises
