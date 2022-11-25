@@ -329,3 +329,16 @@ class Grafo():
                         no_visitado.flotar(buscado)
                 adyacentes = adyacentes.siguiente
         return camino
+
+    def camino(self, resultados, origen, destino):
+        camino_mas_corto = {'camino': [],
+                            'costo': None}
+        if destino in resultados:
+            vert_destino = resultados[destino]
+            camino_mas_corto['costo'] = vert_destino['peso']
+            camino_mas_corto['camino'].append(destino)
+            while vert_destino['previo'] is not None:
+                camino_mas_corto['camino'].append(vert_destino['previo'])
+                vert_destino = resultados[vert_destino['previo']]
+            camino_mas_corto['camino'].reverse()
+        return camino_mas_corto
