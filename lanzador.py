@@ -8,7 +8,7 @@ def lanzar():
     if(x == 1):
         from arbolbinario import nodoHuffman
         from sys import getsizeof
-        from ejer1 import codificar, decodificar, gtabla, comparo, comparacionnodo
+        from ejercicios.ejer1 import codificar, decodificar, gtabla, comparo, comparacionnodo
         dic = {'A': '00', '3': '01', '1': '100', 'T': '110',
        'F': '111', '0': '1010', 'M': '1011'}
 
@@ -34,6 +34,6 @@ def lanzar():
         decodificada = decodificar(codificada, bosque[0])
         print('La cadena decodificada es la siguiente:' + str(decodificada))
     elif(x == 2):
-        import ejer2 
+        import ejercicios.ejer2 
     elif(x == 3):
-        import ejer3
+        import ejercicios.ejer3
