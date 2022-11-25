@@ -67,7 +67,6 @@ def orden_numero2(raiz):
 
 print('Lista en orden creciente en función del número asignado a cada Pokemon:')
 orden_numero2(a_numero)
-print()
 
 def orden_nombre(raiz):
     if(raiz is not None):
@@ -88,6 +87,37 @@ def nivel_nombre(raiz):
             arribo(cola, nodo.izq)
         if(nodo.der is not None):
             arribo(cola, nodo.der)
-    
+
 print('Lista en orden por nivel de los Pokemons:')
 nivel_nombre(a_nombres)
+
+def busqueda_prox_pokemon3(raiz, buscado):
+    if(raiz is not None):
+        if(raiz.informacion[0].debilidad[0:len(buscado)] == buscado):
+            print(raiz.informacion[0].nombre)
+        busqueda_prox_pokemon3(raiz.izq, buscado)
+        busqueda_prox_pokemon3(raiz.der, buscado)
+
+print('Debiles contra Jolteon: ')
+busqueda_prox_pokemon3(a_nombres, 'Jolteon')
+
+print('Debiles contra Lycanroc: ')
+busqueda_prox_pokemon3(a_nombres, 'Lycanroc')
+
+print('Debiles contra Tyrantrum: ')
+busqueda_prox_pokemon3(a_nombres, 'Tyrantrum')
+
+cont = 0
+
+def orden_tipo(raiz, cont):
+    if(raiz is not None):
+        if raiz.informacion[0].tipo == 'fuego':
+            cont += 1
+        orden_tipo(raiz.izq, cont)
+        print(raiz.informacion[0].nombre, raiz.informacion[0].tipo)
+        orden_tipo(raiz.der, cont)
+    return cont
+
+print('Pokemons y su tipo:')
+cont = orden_tipo(a_nombres, cont)
+print('Cantidad de Pokemons del tipo fuego:',cont)

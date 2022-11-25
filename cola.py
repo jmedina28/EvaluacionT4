@@ -11,7 +11,7 @@ class Cola():
         self.nelementos = 0
 
 def vacia(cola):
-    return cola.nelementos == None
+    return cola.nelementos == 0
 
 def atencion(cola):
     aux = cola.primero.informacion
